@@ -1,13 +1,15 @@
 const initCount = 0
-export default function countReducer(preStore = initCount, action) {
+export default function countReducer(preState = initCount, action) {
   const { type, data } = action
   switch (type) {
     case 'increment': {
-      return preStore + data
+      return preState + data
     }
     case 'decrement': {
-      return preStore - data
+      return preState - data
     }
+    default:
+      return preState
   }
-  return preStore
+
 }
