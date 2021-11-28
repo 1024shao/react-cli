@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import store from '../../redux/store'
-import {
-  createDecrementAction,
-  createIncrementAction,
-  createIncrementAsyncAction
-} from '../../redux/count_action'
+import { INCREMENT, DECREMENT } from '../../redux/constant'
+import { createIncrementAction, createDecrementAction, createIncrementAsyncAction }
+  from '../../redux/count_action'
 export default class Count extends Component {
 
   render() {
@@ -17,7 +15,7 @@ export default class Count extends Component {
           <option value={3}>3</option>
         </select>&nbsp;
         <button onClick={this.increment}> + </button>&nbsp;
-        <button onClick={this.decrement}> - </button>&nbsp;
+        <button> - </button>&nbsp;
         <button onClick={this.waitIncrement}>等一等加</button>&nbsp;
       </div >
     )
@@ -25,10 +23,6 @@ export default class Count extends Component {
   increment = () => {
     const { value } = this.selectRef
     store.dispatch(createIncrementAction(value * 1))
-  }
-  decrement = () => {
-    const { value } = this.selectRef
-    store.dispatch(createDecrementAction(value))
   }
   waitIncrement = () => {
     const { value } = this.selectRef

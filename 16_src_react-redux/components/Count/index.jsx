@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
 import store from '../../redux/store'
-import {
-  createDecrementAction,
-  createIncrementAction,
-  createIncrementAsyncAction
-} from '../../redux/count_action'
+import { INCREMENT, DECREMENT } from '../../redux/constant'
+import { createIncrementAction, createDecrementAction, createIncrementAsyncAction }
+  from '../../redux/count_action'
 export default class Count extends Component {
 
   render() {
+    console.log("@@@@@@@@", this.props)
     return (
       <div>
-        <h2>当前求和为:{store.getState()}</h2>
+        <h2>当前求和为:{this.props.count}</h2>
         <select ref={c => this.selectRef = c} >
           <option value={1}>1</option>
           <option value={2}>2</option>
@@ -24,11 +23,12 @@ export default class Count extends Component {
   }
   increment = () => {
     const { value } = this.selectRef
-    store.dispatch(createIncrementAction(value * 1))
+    // store.dispatch(createIncrementAction(value * 1))
+    this.props.jia(value * 1)
   }
   decrement = () => {
     const { value } = this.selectRef
-    store.dispatch(createDecrementAction(value))
+    this.props.jian(value * 1)
   }
   waitIncrement = () => {
     const { value } = this.selectRef
