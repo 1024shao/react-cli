@@ -7663,10 +7663,15 @@ nan@^2.12.1:
   resolved "https://registry.nlark.com/nan/download/nan-2.15.0.tgz#3f34a473ff18e15c1b5626b62903b5ad6e665fee"
   integrity sha1-PzSkc/8Y4VwbVia2KQO1rW5mX+4=
 
-nanoid@^3.1.16, nanoid@^3.1.20:
+nanoid@^3.1.20:
   version "3.1.20"
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.1.20.tgz"
   integrity sha512-a1cQNyczgKbLX9jwbS/+d7W8fX/RfgYR7lVWwWOGIPNgK2m0MWvrGF6/m4kk6U3QcFMnZf3RIhL0v2Jgh/0Uxw==
+
+nanoid@^3.1.30:
+  version "3.1.30"
+  resolved "https://registry.npmmirror.com/nanoid/download/nanoid-3.1.30.tgz#63f93cc548d2a113dc5dfbc63bfa09e2b9b64362"
+  integrity sha1-Y/k8xUjSoRPcXfvGO/oJ4rm2Q2I=
 
 nanomatch@^1.2.9:
   version "1.2.13"
