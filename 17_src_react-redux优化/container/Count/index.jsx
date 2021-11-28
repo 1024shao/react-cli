@@ -1,16 +1,17 @@
-import React, { Component } from 'react'
-import store from '../../redux/store'
+import { connect } from 'react-redux'
 import {
-  createDecrementAction,
+  createIncrementAsyncAction,
   createIncrementAction,
-  createIncrementAsyncAction
+  createDecrementAction
 } from '../../redux/count_action'
-export default class Count extends Component {
+import React, { Component } from 'react'
+
+class Count extends Component {
 
   render() {
     return (
       <div>
-        <h2>当前求和为:{store.getState()}</h2>
+        <h2>当前求和为:{this.props.count}</h2>
         <select ref={c => this.selectRef = c} >
           <option value={1}>1</option>
           <option value={2}>2</option>
@@ -24,14 +25,26 @@ export default class Count extends Component {
   }
   increment = () => {
     const { value } = this.selectRef
-    store.dispatch(createIncrementAction(value * 1))
+    // store.dispatch(createIncrementAction(value * 1))
+    this.props.jia(value * 1)
   }
   decrement = () => {
     const { value } = this.selectRef
-    store.dispatch(createDecrementAction(value))
+    // store.dispatch(createDecrementAction(value))
+    this.props.jian(value)
   }
   waitIncrement = () => {
     const { value } = this.selectRef
-    store.dispatch(createIncrementAsyncAction(value * 1, 500))
+    // store.dispatch(createIncrementAsyncAction(value * 1, 500))
+    this.props.asyncJia(value * 1, 500)
   }
 }
+
+export default connect(
+  state => ({ count: state }),
+  {
+    jia: createIncrementAction,
+    jian: createDecrementAction,
+    asyncJia: createIncrementAsyncAction,
+  }
+)(Count)
