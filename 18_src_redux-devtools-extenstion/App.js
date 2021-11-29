@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
-import Demo from './components/03_hooks'
+import Count from './container/Count'
+import Person from './container/person'
 export default class App extends Component {
   render() {
     return (
       <div>
-        <Demo></Demo>
+        <Count />
+        <hr />
+        <Person />
       </div>
     )
   }

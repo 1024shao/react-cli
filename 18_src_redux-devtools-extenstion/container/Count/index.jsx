@@ -4,7 +4,7 @@ import {
   createIncrementAsyncAction,
   createIncrementAction,
   createDecrementAction
-} from '../../redux//action/count'
+} from '../../redux/action/count'
 
 
 class Count extends Component {

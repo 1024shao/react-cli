@@ -4,9 +4,9 @@ import thunk from 'redux-thunk'
 
 import countReducer from './reducer/count'
 import personReducer from './reducer/person'
+import { composeWithDevTools } from 'redux-devtools-extension'
 const allReducer = combineReducers({
   count: countReducer,
   personList: personReducer
 })
-
-export default createStore(allReducer, applyMiddleware(thunk))
+export default createStore(allReducer, composeWithDevTools(applyMiddleware(thunk)))

@@ -10,3 +10,10 @@ export default function personReducer(preSate = initState, action) {
       return preSate
   }
 }
+
+// action 和 reducer 都必须是一个纯函数
+/*
+  不能修改参数
+  不能调用math.random() date.now()等不纯的方法
+  不会产生任何副作用,例如网络请求,io操作
+*/
